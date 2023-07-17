@@ -1,0 +1,4 @@
+@mixin font($fs: 16px, $lh: 22px) {
+    font-size: $fs;
+    line-height: decimal-round(calc($lh / $fs), 2);
+}
