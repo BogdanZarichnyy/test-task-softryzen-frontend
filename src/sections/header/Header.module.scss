@@ -1,0 +1,111 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/functions';
+@import '../../sass/utils/mixins';
+
+.header {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    @media screen and (max-width: $toTablet) {
+        padding: 22px 0;
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        padding: 16px 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 32px 0;
+    }
+}
+
+.wrraper {
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo {
+    @include font(28px, 38px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    @include transition-effect(transform);
+
+    &:hover,
+    &:focus {
+        transform: scale(1.03);
+    }
+
+    @media screen and (min-width: $tablet) {
+        @include font(35px, 48px);
+        gap: 10px;
+    }
+}
+
+.logoIcon {
+    width: 40px;
+    height: 36px;
+    fill: getColor('general');
+
+    .logo:hover &,
+    .logo:focus & {
+        fill: getColor('hover');
+    }
+}
+
+.logoPrefix {
+    color: getColor('general');
+
+    .logo:hover &,
+    .logo:focus & {
+        color: getColor('hover');
+    }
+}
+
+.navigation {
+    display: flex;
+    margin-top: 8px;
+
+    @media screen and (min-width: $tablet) {
+        @include font(18px, 25px);
+        margin-top: 0;
+    }
+}
+
+.item {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.item:active {
+    background-color: $hoverBackgroundColor;
+}
+
+.link {
+    display: block;
+    position: relative;
+    padding: 8px 6px;
+
+    &:hover::after,
+    &:focus::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: getColor('hover');
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        padding: 11px 10px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 16px 20px;
+    }
+}

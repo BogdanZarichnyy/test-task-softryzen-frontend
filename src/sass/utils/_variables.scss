@@ -2,11 +2,13 @@
 $colors: (
     'main': #FFF,
     'secondary': #333,
-    'general': #2EBF4F,
+    'general': #28A745,
     'hover': #2EBF4F,
     'post': #0284D0,
     'neutral': #808080,
 );
+
+$hoverBackgroundColor: #0284D080;
 
 // Resolution points
 $toMobile: 319px;

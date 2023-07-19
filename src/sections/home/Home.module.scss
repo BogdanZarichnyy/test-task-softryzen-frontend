@@ -1,0 +1,102 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/functions';
+@import '../../sass/utils/mixins';
+
+.home {
+    padding: 160px 0 104px;
+    background: linear-gradient(
+        0deg, rgba(0, 0, 0, 0.50) 0%, 
+        rgba(0, 0, 0, 0.50) 100%), 
+        url("../../images/gallery/showcase.jpg"), 
+        lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @media screen and (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background: linear-gradient(
+                0deg, rgba(0, 0, 0, 0.50) 0%, 
+                rgba(0, 0, 0, 0.50) 100%), 
+                url("../../images/gallery/showcase@2x.jpg"), 
+                lightgray 50% / cover no-repeat;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        padding: 378px 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 272px 0 270px;
+    }
+}
+
+@supports (background-image: -webkit-image-set(url('../../images/gallery/showcase.webp'))) {
+    .home {
+        background: linear-gradient(
+            0deg, rgba(0, 0, 0, 0.50) 0%, 
+            rgba(0, 0, 0, 0.50) 100%), 
+            url("../../images/gallery/showcase.webp"), 
+            lightgray 50% / cover no-repeat;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @media screen and (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background: linear-gradient(
+                0deg, rgba(0, 0, 0, 0.50) 0%, 
+                rgba(0, 0, 0, 0.50) 100%), 
+                url("../../images/gallery/showcase@2x.webp"), 
+                lightgray 50% / cover no-repeat;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+}
+
+.wrraper {
+    text-align: center;
+}
+
+.title {
+    margin: 0 auto;
+    width: 240px;
+    font-family: 'OpenSans-Regular';
+    font-weight: 600;
+    @include font(40px, 54px);
+
+    @media screen and (min-width: $tablet) {
+        width: auto;
+        @include font(55px, 75px);
+    }
+}
+
+.text {
+    margin: 16px auto 0;
+    width: 280px;
+    @include font(26px, 32px);
+
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        width: 523px;
+        @include font(40px, 48px);
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: auto;
+        @include font(40px, 54px);
+    }
+}
+
+.buttonIcon {
+    width: 9px;
+    height: 18px;
+}

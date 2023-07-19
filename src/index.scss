@@ -53,6 +53,8 @@ body {
     font-family: 'OpenSans-Regular';
     font-style: normal;
     font-weight: 400;
+    color: getColor('main');
+    // background-color: grey;
     background-color: getColor('main');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

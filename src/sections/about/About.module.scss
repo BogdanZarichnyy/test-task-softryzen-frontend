@@ -1,0 +1,176 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/functions';
+@import '../../sass/utils/mixins';
+
+.about {
+    background: url("../../images/gallery/people.jpg"), getColor('general');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 320px 220px;
+
+    @media screen and (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        background: url("../../images/gallery/people@2x.jpg"), getColor('general');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 320px 220px;
+    }
+
+    @media screen and (width: $tablet) {
+        background-position-x: calc(-100vw / 2.75);
+        background-size: cover;
+    }
+
+    @media screen and (min-width: calc($tablet + 1px)) and (max-width: 931px) {
+        background-position-x: calc(-100vw / 3.5);
+        background-size: cover;
+    }
+
+    @media screen and (min-width: 902px) {
+        background-size: contain;
+    }
+
+    @media screen and (min-width: 902px) and (max-width: 931px) {
+        background-position-x: calc(-100vw / 3.7);
+    }
+
+    @media screen and (min-width: 932px) and (max-width: 1211px) {
+        background-position-x: calc(-100vw / 4.5);
+    }
+
+    @media screen and (min-width: 1212px) and (max-width: 1244px) {
+        background-position-x: calc(-100vw / 6);
+    }
+
+    @media screen and (min-width: 1245px) and (max-width: $toDesktop) {
+        background-position-x: calc(-100vw / 8);
+    }
+
+    @media screen and (min-width: $desktop) {
+        background-position-x: 0;
+    }
+}
+
+@supports (background-image: -webkit-image-set(url('../../images/gallery/people.webp'))) {
+    .about {
+        background: url("../../images/gallery/people.webp"), getColor('general');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 320px 220px;
+
+        @media screen and (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background: url("../../images/gallery/people@2x.webp"), getColor('general');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 320px 220px;
+        }
+
+        @media screen and (width: $tablet) {
+            background-position-x: calc(-100vw / 2.75);
+            background-size: cover;
+        }
+    
+        @media screen and (min-width: calc($tablet + 1px)) and (max-width: 931px) {
+            background-position-x: calc(-100vw / 3.5);
+            background-size: cover;
+        }
+    
+        @media screen and (min-width: 902px) {
+            background-size: contain;
+        }
+    
+        @media screen and (min-width: 902px) and (max-width: 931px) {
+            background-position-x: calc(-100vw / 3.7);
+        }
+    
+        @media screen and (min-width: 932px) and (max-width: 1211px) {
+            background-position-x: calc(-100vw / 4.5);
+        }
+    
+        @media screen and (min-width: 1212px) and (max-width: 1244px) {
+            background-position-x: calc(-100vw / 6);
+        }
+    
+        @media screen and (min-width: 1245px) and (max-width: $toDesktop) {
+            background-position-x: calc(-100vw / 8);
+        }
+    
+        @media screen and (min-width: $desktop) {
+            background-position-x: 0;
+        }
+    }   
+}
+
+.wrraper {
+    position: relative;
+    padding: 220px 0 79px;
+
+    @media screen and (min-width: $tablet) {
+        padding: 0;
+    }
+}
+
+.info {
+    padding: 79px 0;
+    background-color: getColor('general');
+    
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        margin-left: auto;
+        width: 400px - 32px ;
+        padding: 62px 0 62px 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-left: auto;
+        width: 690px - 28px ;
+        padding: 80px 0 86px 20px;
+    }
+}
+
+.title {
+    @include font(32px, 44px);
+
+    @media screen and (min-width: $tablet) {
+        @include font(40px, 48px);
+    }
+}
+
+.subTitle {
+    margin-bottom: 16px;
+    display: block;
+    @include font();
+
+    @media screen and (min-width: $tablet) {
+        @include font(18px, 25px);
+    }
+}
+
+.text {
+    margin-top: 24px;
+
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        @include font(18px, 25px);
+        width: 336px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        @include font(18px, 25px);
+        width: 642px;
+    }
+}
+
+.buttonAbout {
+    margin-top: 24px;
+    border: solid 1px getColor('main');
+    padding: 15px 31px;
+    @include font();
+
+    @media screen and (min-width: $tablet) {
+        @include font(18px, 25px);
+    }
+}

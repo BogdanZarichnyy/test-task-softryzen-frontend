@@ -1,0 +1,41 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/functions';
+@import '../../sass/utils/mixins';
+
+.button {
+    // margin-top: 24px;
+    border: 0;
+    padding: 16px 32px;
+    background-color: getColor('general');
+    border-radius: 5px;
+    font-family: inherit;
+    @include font(18px, 25px);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+    user-select: none;
+    @include transition-effect(background-color box-shadow text-shadow);
+    transition-duration: 100ms;
+    
+    &:hover,
+    &:focus {
+        background-color: getColor('hover');
+        // box-shadow:
+        //     0 4px 4px getColor('secondary'),
+    }
+
+    &:active {
+        background-color: getColor('hover');
+        // box-shadow:
+        //     inset 4px 4px 4px getColor('general'),
+        //     inset -4px 4px 4px getColor('general'),
+        //     inset 4px -4px 4px getColor('general'),
+        //     inset -4px -4px 4px getColor('general');
+        // text-shadow:
+        //     4px 4px 4px getColor('general'),
+        //     -4px 4px 4px getColor('general'),
+        //     4px -4px 4px getColor('general'),
+        //     -4px -4px 4px getColor('general');
+    }
+}
