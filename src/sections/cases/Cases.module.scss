@@ -1,0 +1,63 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/functions';
+@import '../../sass/utils/mixins';
+
+.wrraper {
+    padding: 56px 0 40px;
+    color: getColor('secondary');
+    text-align: center;
+
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        padding: 48px 0 40px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 80px 0;
+    }
+}
+
+.title {
+    @include font(32px, 44px);
+
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        @include font(40px, 54px);
+    }
+
+    @media screen and (min-width: $desktop) {
+        @include font(40px, 48px);
+    }
+}
+
+.subTitle {
+    margin-bottom: 16px;
+    display: block;
+    @include font();
+
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        @include font(18px, 25px);
+    }
+
+    @media screen and (min-width: $desktop) {
+        @include font(18px, 33px);
+    }
+}
+
+.text {
+    margin-top: 24px;
+
+    @media screen and (min-width: $tablet) {
+        @include font(18px, 25px);
+    }
+}
+
+.gallery {
+    margin-top: 31px;
+
+    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+        margin-top: 30px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-top: 36px;
+    }
+}
