@@ -1,44 +1,6 @@
+import images from '../../services/images';
+
 import scss from './Cases.module.scss';
-
-import img1JPG_1x from '../../images/cases/cases1.jpg';
-import img1JPG_2x from '../../images/cases/cases1@2x.jpg';
-import img1WEBP_1x from '../../images/cases/cases1.webp';
-import img1WEBP_2x from '../../images/cases/cases1@2x.webp';
-
-import img2JPG_1x from '../../images/cases/cases2.jpg';
-import img2JPG_2x from '../../images/cases/cases2@2x.jpg';
-import img2WEBP_1x from '../../images/cases/cases2.webp';
-import img2WEBP_2x from '../../images/cases/cases2@2x.webp';
-
-import img3JPG_1x from '../../images/cases/cases3.jpg';
-import img3JPG_2x from '../../images/cases/cases3@2x.jpg';
-import img3WEBP_1x from '../../images/cases/cases3.webp';
-import img3WEBP_2x from '../../images/cases/cases3@2x.webp';
-
-import img4JPG_1x from '../../images/cases/cases4.jpg';
-import img4JPG_2x from '../../images/cases/cases4@2x.jpg';
-import img4WEBP_1x from '../../images/cases/cases4.webp';
-import img4WEBP_2x from '../../images/cases/cases4@2x.webp';
-
-import img5JPG_1x from '../../images/cases/cases5.jpg';
-import img5JPG_2x from '../../images/cases/cases5@2x.jpg';
-import img5WEBP_1x from '../../images/cases/cases5.webp';
-import img5WEBP_2x from '../../images/cases/cases5@2x.webp';
-
-import img6JPG_1x from '../../images/cases/cases6.jpg';
-import img6JPG_2x from '../../images/cases/cases6@2x.jpg';
-import img6WEBP_1x from '../../images/cases/cases6.webp';
-import img6WEBP_2x from '../../images/cases/cases6@2x.webp';
-
-// import img7JPG_1x from '../../images/cases/cases7.jpg';
-// import img7JPG_2x from '../../images/cases/cases7@2x.jpg';
-// import img7WEBP_1x from '../../images/cases/cases7.webp';
-// import img7WEBP_2x from '../../images/cases/cases7@2x.webp';
-
-// import img8JPG_1x from '../../images/cases/cases8.jpg';
-// import img8JPG_2x from '../../images/cases/cases8@2x.jpg';
-// import img8WEBP_1x from '../../images/cases/cases8.webp';
-// import img8WEBP_2x from '../../images/cases/cases8@2x.webp';
 
 export const Cases = () => {
     return (
@@ -55,23 +17,61 @@ export const Cases = () => {
 
                         <ul className={scss.gallery}>
                             <li className={scss.item}>
-                                <img className={scss.image} src={img1JPG_1x} alt="Not found img1JPG_1x"/>
+                                <picture>
+                                    <source srcSet={`${images.cases1WEBP_1x} 1x, ${images.cases1WEBP_2x} 2x`} type="image/webp" />
+                                    <source srcSet={`${images.cases1JPG_1x} 1x, ${images.cases1JPG_2x} 2x`} type="image/jpg" />
+                                    <img src={`${images.cases1JPG_1x} 1x`} srcSet={`${images.cases1JPG_2x} 2x`} alt="Meeting" title="Meeting" width="280"/>
+                                </picture>
                             </li>
                             <li className={scss.item}>
-                                <img className={scss.image} src={img2JPG_1x} alt="Not found img2JPG_1x"/>
+                                <picture>
+                                    <source srcSet={`${images.cases2WEBP_1x} 1x, ${images.cases2WEBP_2x} 2x`} type="image/webp" />
+                                    <source srcSet={`${images.cases2JPG_1x} 1x, ${images.cases2JPG_2x} 2x`} type="image/jpg" />
+                                    <img src={`${images.cases2JPG_1x} 1x`} srcSet={`${images.cases2JPG_2x} 2x`} alt="Working" title="Working" width="280"/>
+                                </picture>
                             </li>
                             <li className={scss.item}>
-                                <img className={scss.image} src={img3JPG_1x} alt="Not found img3JPG_1x"/>
+                                <picture>
+                                    <source srcSet={`${images.cases3WEBP_1x} 1x, ${images.cases3WEBP_2x} 2x`} type="image/webp" />
+                                    <source srcSet={`${images.cases3JPG_1x} 1x, ${images.cases3JPG_2x} 2x`} type="image/jpg" />
+                                    <img src={`${images.cases3JPG_1x} 1x`} srcSet={`${images.cases3JPG_2x} 2x`} alt="Diagrama" title="Diagrama" width="280"/>
+                                </picture>
                             </li>
                             <li className={scss.item}>
-                                <img className={scss.image} src={img4JPG_1x} alt="Not found img4JPG_1x"/>
+                                <picture>
+                                    <source srcSet={`${images.cases4WEBP_1x} 1x, ${images.cases4WEBP_2x} 2x`} type="image/webp" />
+                                    <source srcSet={`${images.cases4JPG_1x} 1x, ${images.cases4JPG_2x} 2x`} type="image/jpg" />
+                                    <img src={`${images.cases4JPG_1x} 1x`} srcSet={`${images.cases4JPG_2x} 2x`} alt="Buildings" title="Buildings" width="280"/>
+                                </picture>
                             </li>
                             <li className={scss.item}>
-                                <img className={scss.image} src={img5JPG_1x} alt="Not found img5JPG_1x"/>
+                                <picture>
+                                    <source srcSet={`${images.cases5WEBP_1x} 1x, ${images.cases5WEBP_2x} 2x`} type="image/webp" />
+                                    <source srcSet={`${images.cases5JPG_1x} 1x, ${images.cases5JPG_2x} 2x`} type="image/jpg" />
+                                    <img src={`${images.cases5JPG_1x} 1x`} srcSet={`${images.cases5JPG_2x} 2x`} alt="Deal" title="Deal" width="280"/>
+                                </picture>
                             </li>
                             <li className={scss.item}>
-                                <img className={scss.image} src={img6JPG_1x} alt="Not found img6JPG_1x"/>
+                                <picture>
+                                    <source srcSet={`${images.cases6WEBP_1x} 1x, ${images.cases6WEBP_2x} 2x`} type="image/webp" />
+                                    <source srcSet={`${images.cases6JPG_1x} 1x, ${images.cases6JPG_2x} 2x`} type="image/jpg" />
+                                    <img src={`${images.cases6JPG_1x} 1x`} srcSet={`${images.cases6JPG_2x} 2x`} alt="Selfie" title="Selfie" width="280"/>
+                                </picture>
                             </li>
+                            {/* <li className={scss.item}>
+                                <picture>
+                                    <source srcSet={`${images.cases7WEBP_1x} 1x, ${images.cases7WEBP_2x} 2x`} type="image/webp" />
+                                    <source srcSet={`${images.cases7JPG_1x} 1x, ${images.cases7JPG_2x} 2x`} type="image/jpg" />
+                                    <img src={`${images.cases7JPG_1x} 1x`} srcSet={`${images.cases7JPG_2x} 2x`} alt="Hands" title="Hands" width="280"/>
+                                </picture>
+                            </li>
+                            <li className={scss.item}>
+                                <picture>
+                                    <source srcSet={`${images.cases8WEBP_1x} 1x, ${images.cases8WEBP_2x} 2x`} type="image/webp" />
+                                    <source srcSet={`${images.cases8JPG_1x} 1x, ${images.cases8JPG_2x} 2x`} type="image/jpg" />
+                                    <img src={`${images.cases8JPG_1x} 1x`} srcSet={`${images.cases8JPG_2x} 2x`} alt="Fhoto" title="Fhoto" width="280"/>
+                                </picture>
+                            </li> */}
                         </ul>
 
                 </div>

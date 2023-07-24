@@ -3,16 +3,16 @@
 @import '../../sass/utils/mixins';
 
 .wrraper {
-    padding: 56px 0 40px;
+    padding: 72px 0 50px;
     color: getColor('secondary');
     text-align: center;
 
     @media screen and (min-width: $tablet) {
-        padding: 48px 0 40px;
+        padding: 50px 0 40px;
     }
 
     @media screen and (min-width: $desktop) {
-        padding: 80px 0;
+        padding: 80px 0 88px;
     }
 }
 
@@ -51,39 +51,78 @@
 }
 
 .gallery {
-    margin-top: 31px;
+    margin-top: 63px;
     display: grid;
-    row-gap: 8px;
+    row-gap: 30px;
 
     @media screen and (min-width: $tablet) {
-        margin-top: 30px;
+        margin-top: 24px;
         grid-template-columns: repeat(3, auto);
-        row-gap: 18px;
+        row-gap: 0;
         justify-content: space-between;
     }
 
     @media screen and (min-width: $desktop) {
         margin-top: 36px;
-        row-gap: 24px;
     }
 }
 
 .item {
     display: block;
     width: 280px;
-    @include transition-effect(opacity);
-    cursor: pointer;
-
-    &:hover, 
-    &:focus {
-        opacity: 0.5;
-    }
 
     @media screen and (min-width: $tablet) {
         width: 223px;
     }
 
     @media screen and (min-width: $desktop) {
-        width: 421px;
+        width: 420px;
+    }
+}
+
+.image {
+    position: relative;
+    @include transition-effect(box-shadow transform);
+    cursor: pointer;
+
+    &:hover, 
+    &:focus {
+        transform: scale(1.01);
+        box-shadow:
+            1px 1px 5px $backdropColor,
+            -1px 1px 5px $backdropColor,
+            1px -1px 5px $backdropColor,
+            -1px -1px 5px $backdropColor,
+            4px 4px 10px $boxShadow,
+            -4px 4px 10px $boxShadow,
+            4px -4px 10px $boxShadow,
+            -4px -4px 10px $boxShadow;
+    }
+
+    &:hover>div,
+    &:focus>div {
+        opacity: 1;
+    }
+}
+
+.name {
+    margin-top: 16px;
+    @include font(20px, 27px);
+
+    @media screen and (min-width: $tablet) {
+        margin-top: 18px;
+        @include font(32px, 32px);
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-top: 14px;
+    }
+}
+
+.position {
+    margin-top: 8%;
+
+    @media screen and (min-width: $tablet) {
+        @include font(18px, 25px);
     }
 }

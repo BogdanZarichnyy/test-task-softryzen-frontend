@@ -5,7 +5,7 @@ export const Header = () => {
     return (
         <header className={scss.header} id="home">
             <div className='container'>
-                <div className={scss.wrraper}>
+                <nav className={scss.wrraper}>
 
                     <a className={scss.logo} href="./">
                         <svg className={scss.logoIcon}>
@@ -33,7 +33,7 @@ export const Header = () => {
                         </li>
                     </ul>
 
-                </div>
+                </nav>
             </div>
         </header>
     );

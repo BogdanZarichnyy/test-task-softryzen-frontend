@@ -1,17 +1,21 @@
 import { Button } from '../../components/button/Button';
+import images from '../../services/images';
 
 import scss from './About.module.scss';
-
-// import imgJPG_1x from '../../images/gallery/people.jpg';
-// import imgJPG_2x from '../../images/gallery/people@2x.jpg';
-// import imgWEBP_1x from '../../images/gallery/people.webp';
-// import imgWEBP_2x from '../../images/gallery/people@2x.webp';
 
 export const About = () => {
     return (
         <section className={scss.about} id="about">
             <div className='container'>
                 <div className={scss.wrraper}>
+
+                    <div className={scss.imageBox}>
+                        <picture>
+                            <source srcSet={`${images.peopleWEBP_1x} 1x, ${images.peopleWEBP_2x} 2x`} type="image/webp" />
+                            <source srcSet={`${images.peopleJPG_1x} 1x, ${images.peopleJPG_2x} 2x`} type="image/jpg" />
+                            <img className={scss.image} src={`${images.peopleJPG_1x} 1x`} srcSet={`${images.peopleJPG_2x} 2x`} alt="People" title="People" width="320"/>
+                        </picture>
+                    </div>
 
                     <div className={scss.info}>
 

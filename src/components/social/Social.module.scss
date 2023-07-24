@@ -1,0 +1,31 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/functions';
+@import '../../sass/utils/mixins';
+
+.socialList {
+    display: flex;
+    gap: 25px;
+}
+
+.item {
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+.link {
+    display: block;
+}
+
+.linkIcon {
+    width: 35px;
+    height: 35px;
+    fill: getColor('main');
+    @include transition-effect(opacity);
+
+    .link:hover &,
+    .link:focus & {
+        fill: getColor('general');
+        opacity: 0.8;
+    }
+}

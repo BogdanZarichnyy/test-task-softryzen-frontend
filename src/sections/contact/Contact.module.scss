@@ -2,8 +2,8 @@
 @import '../../sass/utils/functions';
 @import '../../sass/utils/mixins';
 
-.about {
-    background-color: getColor('general');
+.contact {
+    background-color: getColor('primary');
     overflow: hidden;
 }
 
@@ -20,6 +20,7 @@
         grid-template-columns: 1fr calc(690px - 28px);
     }
 }
+
 
 .imageBox {
     display: block;
@@ -53,72 +54,70 @@
 }
 
 .info {
-    padding: 79px 0;
+    padding: 51px 0 25px;
     
     @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
         margin-left: calc(400px - 32px * 2);
         width: calc(400px - 32px);
-        padding: 62px 0 62px 32px;
+        padding: 32px 0 62px 33px;
     }
 
     @media screen and (min-width: $desktop) {
         margin-left: calc(690px - 28px - 20px);
         width: calc(690px - 28px);
-        padding: 80px 0 86px 20px;
+        padding: 56px 0 77px 20px;
     }
 }
 
 .title {
     @include font(32px, 44px);
+    color: getColor('secondary');
 
     @media screen and (min-width: $tablet) {
         @include font(40px, 48px);
     }
 }
 
-.subTitle {
-    margin-bottom: 16px;
-    display: block;
-    @include font();
+.form {
+    margin-top: 69px;
 
     @media screen and (min-width: $tablet) {
-        @include font(18px, 25px);
-    }
-}
-
-.text {
-    margin-top: 24px;
-
-    @media screen and (min-width: $tablet) {
-        @include font(18px, 25px);
-        width: 336px;
+        margin-top: 24px;
     }
 
     @media screen and (min-width: $desktop) {
-        width: 642px;
+        margin-top: 31px;
     }
 }
 
-.buttonAbout {
-    margin-top: 24px;
-    border: solid 1px getColor('main');
-    padding: 15px 31px;
-    @include font();
+.label {
+    color: getColor('input');
+    @include font(16px, 23px);
 
     @media screen and (min-width: $tablet) {
         @include font(18px, 25px);
     }
+}
 
-    &:hover,
-    &:focus {
-        background-color: getColor('primary');
-        border-color: getColor('general');
-        color: getColor('general');
+.input {
+    display: block;
+    width: 100%;
+    padding: 16px 8px;
+    border: 0;
+    @include font(16px, 23px);
+    color: getColor('secondary');
+
+    @media screen and (min-width: $tablet) {
+        @include font(18px, 25px);
     }
+}
 
-    &:active {
-        background-color: getColor('primary');
-        border-color: getColor('general');
-        color: getColor('general');
+.buttonContactForm {
+    margin-top: 24px;
+    padding: 16px 56px;
+    @include font();
+
+    @media screen and (min-width: $tablet) {
+        @include font(18px, 25px);
     }
 }

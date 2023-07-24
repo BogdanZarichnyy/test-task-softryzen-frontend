@@ -1,0 +1,25 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/functions';
+@import '../../sass/utils/mixins';
+
+.footer {
+    background-color: getColor('secondary');
+}
+
+.wrraper {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social {
+    display: inline-block;
+}
+
+.copyright {
+    margin-top: 12px;
+
+    @media screen and (min-width: $tablet) {
+        margin-top: 10px;
+        @include font(18px, 25px);
+    }
+}
