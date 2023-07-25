@@ -27,7 +27,7 @@
             background-size: cover;
         }
     
-    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+    @media screen and (min-width: $tablet) {
         padding: 378px 0;
     }
 
@@ -85,7 +85,7 @@
     width: 280px;
     @include font(26px, 32px);
 
-    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+    @media screen and (min-width: $tablet) {
         width: 523px;
         @include font(40px, 48px);
     }

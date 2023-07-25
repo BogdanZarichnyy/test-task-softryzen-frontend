@@ -1,4 +1,5 @@
 import sprite from '../../images/sprite.svg';
+
 import scss from './Header.module.scss';
 
 export const Header = () => {

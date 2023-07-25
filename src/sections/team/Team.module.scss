@@ -89,14 +89,14 @@
     &:focus {
         transform: scale(1.01);
         box-shadow:
-            1px 1px 5px $backdropColor,
-            -1px 1px 5px $backdropColor,
-            1px -1px 5px $backdropColor,
-            -1px -1px 5px $backdropColor,
-            4px 4px 10px $boxShadow,
-            -4px 4px 10px $boxShadow,
-            4px -4px 10px $boxShadow,
-            -4px -4px 10px $boxShadow;
+            1px 1px 5px getColor('backdrop-color'),
+            -1px 1px 5px getColor('backdrop-color'),
+            1px -1px 5px getColor('backdrop-color'),
+            -1px -1px 5px getColor('backdrop-color'),
+            4px 4px 10px getColor('box-shadow'),
+            -4px 4px 10px getColor('box-shadow'),
+            4px -4px 10px getColor('box-shadow'),
+            -4px -4px 10px getColor('box-shadow');
     }
 
     &:hover>div,

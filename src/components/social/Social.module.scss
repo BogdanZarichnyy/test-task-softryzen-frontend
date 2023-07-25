@@ -21,11 +21,17 @@
     width: 35px;
     height: 35px;
     fill: getColor('main');
-    @include transition-effect(opacity);
+    @include transition-effect(fill opacity);
 
     .link:hover &,
     .link:focus & {
         fill: getColor('general');
         opacity: 0.8;
+    }
+
+    footer .link:hover &,
+    footer .link:focus & {
+        fill: getColor('general');
+        opacity: 1;
     }
 }

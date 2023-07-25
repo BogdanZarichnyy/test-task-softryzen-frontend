@@ -55,7 +55,7 @@
 .info {
     padding: 48px 0 58px;
     
-    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+    @media screen and (min-width: $tablet) {
         width: calc(400px - 32px);
         padding: 59px 0;
         order: -1;
@@ -64,7 +64,6 @@
     @media screen and (min-width: $desktop) {
         width: calc(690px - 28px);
         padding: 80px 20px 80px 0;
-        order: -1;
     }
 }
 

@@ -4,7 +4,7 @@ import scss from './Footer.module.scss';
 
 export const Footer = () => {
     return (
-        <section className={scss.footer} id="footer">
+        <footer className={scss.footer} id="footer">
             <div className='container'>
                 <div className={scss.wrraper}>
 
@@ -16,6 +16,6 @@ export const Footer = () => {
 
                 </div>
             </div>
-        </section>
+        </footer>
     );
 }

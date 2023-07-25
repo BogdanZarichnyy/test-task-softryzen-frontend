@@ -55,7 +55,7 @@
 .info {
     padding: 79px 0;
     
-    @media screen and (min-width: $tablet) and (max-width: $toDesktop) {
+    @media screen and (min-width: $tablet) {
         margin-left: calc(400px - 32px * 2);
         width: calc(400px - 32px);
         padding: 62px 0 62px 32px;

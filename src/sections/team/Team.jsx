@@ -26,7 +26,7 @@ export const Team = () => {
                                         <img src={`${images.person1JPG_1x} 1x`} srcSet={`${images.person1JPG_2x} 2x`} alt="John Doe" title="John Doe" width="280"/>
                                     </picture>
                                     <Backdrop>
-                                        <Social />
+                                        <Social/>
                                     </Backdrop>
                                 </div>
                                 <h3 className={scss.name}>John Doe</h3>

@@ -9,16 +9,15 @@ $colors: (
     'post': #0284D0,
     'neutral': #808080,
     'backdrop': #040404,
+    'warning': #eb5757,
+
+    // shadows
+    'hover-navigation': #0284D080, // #0284D0[80] - opacity 50%
+    'backdrop-color': #04040480, // #040404[80] - opacity 50%
+    'box-shadow': #00000040, // #000000[40] - opacity 25%
 );
 
-$hoverBackgroundColor: #0284D080; // 50%
-$backdropColor: #04040480; // 50%
-$boxShadow: #00000040; //25%
-
 // Resolution points
-$toMobile: 319px;
 $mobile: 320px;
-$toTablet: 767px;
 $tablet: 768px;
-$toDesktop: 1359px;
 $desktop: 1360px;
