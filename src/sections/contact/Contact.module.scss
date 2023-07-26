@@ -134,11 +134,12 @@
     border-radius: 5px;
     @include font(16px, 23px);
     color: getColor('secondary');
+    // background-color: getColor('main') !important;
     // outline: transparent;
 
-    &:not(:placeholder-shown) ~ .warning {
-        visibility: hidden;
-    }
+    // &:not(:placeholder-shown) ~ .warning {
+    //     visibility: hidden;
+    // }
 
     &:focus + .text {
         // transform: translateY(-220%);
