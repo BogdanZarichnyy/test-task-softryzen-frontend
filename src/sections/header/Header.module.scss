@@ -20,6 +20,12 @@
     }
 }
 
+.scroll {
+    position: fixed;
+    background-color: getColor('backdrop-color');
+    z-index: 10;
+}
+
 .wrraper {
     @media screen and (min-width: $tablet) {
         display: flex;
@@ -113,5 +119,11 @@
 
     @media screen and (min-width: $desktop) {
         padding: 16px 20px;
+    }
+}
+
+.active {
+    &::after {
+        opacity: 1;
     }
 }

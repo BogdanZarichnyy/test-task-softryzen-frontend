@@ -1,0 +1,51 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/functions';
+@import '../../sass/utils/mixins';
+
+.backdropModal{
+    position: fixed;
+    width: 100vw;
+    padding: 24px;
+}
+
+.modal {
+    padding: 28px;
+    border-radius: 10px;
+    background-color: getColor('main');
+    color: getColor('secondary');
+    font-family: 'OpenSans-Regular';
+    font-weight: 600;
+}
+
+.title {
+    @include font(24px, 24px);
+}
+
+.text {
+    margin-top: 24px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    color: getColor('general');
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: getColor('hover');
+    }
+}
+
+.linkIcon {
+    margin-right: 6px;
+    width: 16px;
+    height: 12px;
+    stroke: getColor('general');
+
+    .link:hover &, 
+    .link:focus & {
+        stroke: getColor('hover');
+    }
+}

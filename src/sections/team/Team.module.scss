@@ -99,6 +99,10 @@
             -4px -4px 10px getColor('box-shadow');
     }
 
+    &>div {
+        opacity: 0;
+    }
+
     &:hover>div,
     &:focus>div {
         opacity: 1;

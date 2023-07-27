@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../../components/button/Button';
+import { Modal } from '../../components/modal/Modal';
 import { useForm } from "react-hook-form";
 
 import images from '../../services/images';
@@ -9,6 +10,7 @@ import scss from './Contact.module.scss';
 
 export const Contact = () => {
     // const [state, setState] = useState({ name: "", email: "" });
+    const [showModal, setShowModal] = useState(false);
     const { register, handleSubmit, formState: { errors }, reset } = useForm({  });
 
     // const EMAIL_PATTERN = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
@@ -17,6 +19,7 @@ export const Contact = () => {
 
     useEffect(() => {
         document.querySelector('#invalid');
+        document.querySelector('#header');
     }, []);
 
     const invalidEmail = () => {
@@ -83,6 +86,8 @@ export const Contact = () => {
     const handleSubmitForm = async (data) => {
         const warningEmailElement = document.querySelector('#warning');
         // console.log(warningEmailElement);
+        const headerElement = document.querySelector('#header');
+        // console.log(headerElement);
 
         if (!data.email) {
             console.log('E-mail is required');
@@ -102,8 +107,12 @@ export const Contact = () => {
 
             console.log('Name:', data.name);
             console.log('E-mail:', data.email);
-
+            
+            headerElement.style.position = 'absolute';
+            headerElement.style.backgroundColor = 'transparent';
+            
             reset();
+            setShowModal(true);
         }
     }
 
@@ -117,6 +126,10 @@ export const Contact = () => {
         // console.log(warningEmailElement);
         warningEmailElement.style.opacity = 0;
     }
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
 
     return (
         <section className={scss.contact} id="contact">
@@ -195,6 +208,8 @@ export const Contact = () => {
                         </form> */}
 
                     </div>
+
+                    {showModal && <Modal onCloseModal={handleCloseModal}/>}
 
                 </div>
             </div>
