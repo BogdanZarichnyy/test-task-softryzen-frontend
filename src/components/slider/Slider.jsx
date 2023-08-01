@@ -90,7 +90,7 @@ export const Slider = ({ onCloseModal, handleCloseModalBackdrop, handleCloseModa
     }
 
     return ReactDOM.createPortal(
-        <Backdrop styles={scss.backdropModal} handleCloseModalBackdrop={handleCloseModalBackdrop} handleCloseModalKeyDown={handleCloseModalKeyDown}>
+        <Backdrop styles={scss.backdropSlider} handleCloseModalBackdrop={handleCloseModalBackdrop} handleCloseModalKeyDown={handleCloseModalKeyDown}>
             <div className={scss.modal}>
 
                 {/* <Swiper className={scss.list}
