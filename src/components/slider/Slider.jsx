@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Backdrop } from '../backdrop/Backdrop';
 
@@ -43,7 +43,7 @@ export const Slider = ({ onCloseModal, handleCloseModalBackdrop, handleCloseModa
             setIsDisactiveButtonPrev(false);
             setIsDisactiveButtonNext(true);
         }
-    }, [setIsDisactiveButtonPrev, setIsDisactiveButtonNext]);
+    }, [image, setIsDisactiveButtonPrev, setIsDisactiveButtonNext]);
 
     useEffect(() => {
         const backdropElement = document.querySelector('#close-slider');
@@ -135,10 +135,10 @@ export const Slider = ({ onCloseModal, handleCloseModalBackdrop, handleCloseModa
                 }
 
                 <button className={scss.buttonArrow} onClick={() => changeImage('prev')} disabled={isDisactiveButtonPrev}>
-                    <img className={scss.buttonArrowImage} src={previoslyImage} alt="Previosly image" title="Previosly image" width="50" type="image/png"/>
+                    <img className={scss.buttonArrowImage} src={previoslyImage} alt="Previosly slider" title="Previosly slider" width="50" type="image/png"/>
                 </button>
                 <button className={scss.buttonArrow} onClick={() => changeImage('next')} disabled={isDisactiveButtonNext}>
-                    <img className={scss.buttonArrowImage} src={nextImage} alt="Next image" title="Next image" width="50" type="image/png"/>
+                    <img className={scss.buttonArrowImage} src={nextImage} alt="Next slider" title="Next slider" width="50" type="image/png"/>
                 </button>
 
                 {/* <ul className={scss.list}>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Slider } from '../../components/slider/Slider';
 
 import images from '../../assets/images/cases';
@@ -7,9 +7,13 @@ import scss from './Cases.module.scss';
 
 const Cases = () => {
     const [showModal, setShowModal] = useState(false);
-    const [imageId, setImageId] = useState();
+    // const [imageId, setImageId] = useState();
     const [image, setImage] = useState();
-    const [imagesList, setImagesList] = useState(images);
+    const [imagesList, setImagesList] = useState();
+
+    useEffect(() => {
+        setImagesList(images);
+    }, []);
 
     // const handleOpenModal = (imageId) => {
     const handleOpenModal = (image) => {
@@ -109,12 +113,10 @@ const Cases = () => {
                         <p className={scss.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sapiente!</p>
 
                         <ul className={scss.gallery}>
-
-                            {images.map((item, index, images) => {
-                                if (index < 6) {
+                            {imagesList &&
+                                imagesList.filter((item) => item.id <= 6).map((item) => {
                                     return (
                                         <li className={scss.item} key={item.id} onClick={() => handleOpenModal(item)}>
-                                        {/* <li className={scss.item} key={item.id} onClick={() => handleOpenModal(item.id)}> */}
                                             <picture>
                                                 <source srcSet={`${item.imageWEBP_1x} 1x, ${item.imageWEBP_2x} 2x`} type="image/webp" />
                                                 <source srcSet={`${item.imageJPG_1x} 1x, ${item.imageJPG_2x} 2x`} type="image/jpg" />
@@ -122,7 +124,6 @@ const Cases = () => {
                                             </picture>
                                         </li>
                                     )}
-                                }
                             )}
 
                         </ul>
