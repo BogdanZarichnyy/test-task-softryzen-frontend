@@ -1,10 +1,10 @@
 import { Social } from '../../components/social/Social';
 import { Backdrop } from '../../components/backdrop/Backdrop';
-import images from '../../services/images';
+import images from '../../assets/images/team';
 
 import scss from './Team.module.scss';
 
-export const Team = () => {
+const Team = () => {
     return (
         <section className={scss.team} id="team">
             <div className='container'>
@@ -18,48 +18,24 @@ export const Team = () => {
                         <p className={scss.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sapiente!</p>
 
                         <ul className={scss.gallery}>
-                            <li className={scss.item}>
-                                <div className={scss.image}>
-                                    <picture>
-                                        <source srcSet={`${images.person1WEBP_1x} 1x, ${images.person1WEBP_2x} 2x`} type="image/webp" />
-                                        <source srcSet={`${images.person1JPG_1x} 1x, ${images.person1JPG_2x} 2x`} type="image/jpg" />
-                                        <img src={`${images.person1JPG_1x} 1x`} srcSet={`${images.person1JPG_2x} 2x`} alt="John Doe" title="John Doe" width="280"/>
-                                    </picture>
-                                    <Backdrop>
-                                        <Social/>
-                                    </Backdrop>
-                                </div>
-                                <h3 className={scss.name}>John Doe</h3>
-                                <p className={scss.position}>President</p>
-                            </li>
-                            <li className={scss.item}>
-                                <div className={scss.image}>
-                                    <picture>
-                                        <source srcSet={`${images.person2WEBP_1x} 1x, ${images.person2WEBP_2x} 2x`} type="image/webp" />
-                                        <source srcSet={`${images.person2JPG_1x} 1x, ${images.person2JPG_2x} 2x`} type="image/jpg" />
-                                        <img src={`${images.person2JPG_1x} 1x`} srcSet={`${images.person2JPG_2x} 2x`} alt="Jane Doe" title="Jane Doe" width="280"/>
-                                    </picture>
-                                    <Backdrop>
-                                        <Social />
-                                    </Backdrop>
-                                </div>
-                                <h3 className={scss.name}>Jane Doe</h3>
-                                <p className={scss.position}>Vice President</p>
-                            </li>
-                            <li className={scss.item}>
-                                <div className={scss.image}>
-                                    <picture>
-                                        <source srcSet={`${images.person3WEBP_1x} 1x, ${images.person3WEBP_2x} 2x`} type="image/webp" />
-                                        <source srcSet={`${images.person3JPG_1x} 1x, ${images.person3JPG_2x} 2x`} type="image/jpg" />
-                                        <img src={`${images.person3JPG_1x} 1x`} srcSet={`${images.person3JPG_2x} 2x`} alt="Steve Smith" title="Steve Smith" width="280"/>
-                                    </picture>
-                                    <Backdrop>
-                                        <Social />
-                                    </Backdrop>
-                                </div>
-                                <h3 className={scss.name}>Steve Smith</h3>
-                                <p className={scss.position}>Marketing Head</p>
-                            </li>
+                            
+                            {images.map((item) => 
+                                <li className={scss.item} key={item.id}>
+                                    <div className={scss.image}>
+                                        <picture>
+                                            <source srcSet={`${item.imageWEBP_1x} 1x, ${item.imageWEBP_2x} 2x`} type="image/webp" />
+                                            <source srcSet={`${item.imageJPG_1x} 1x, ${item.imageJPG_2x} 2x`} type="image/jpg" />
+                                            <img src={`${item.imageJPG_1x} 1x`} srcSet={`${item.imageJPG_2x} 2x`} alt={item.name} title={item.name} width="280"/>
+                                        </picture>
+                                        <Backdrop>
+                                            <Social/>
+                                        </Backdrop>
+                                    </div>
+                                    <h3 className={scss.name}>{item.name}</h3>
+                                    <p className={scss.position}>{item.position}</p>
+                                </li>
+                            )}
+
                         </ul>
 
                 </div>
@@ -67,3 +43,5 @@ export const Team = () => {
         </section>
     );
 }
+
+export default Team;

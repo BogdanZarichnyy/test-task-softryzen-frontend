@@ -32,6 +32,14 @@
     color: getColor('general');
     cursor: pointer;
 
+    /* для кнопки в тезі <Link/> - необхідно для передачі фокусу на модалку*/
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    font-family: 'OpenSans-Regular';
+    font-weight: 600;
+    @include font();
+
     &:hover,
     &:focus {
         color: getColor('hover');

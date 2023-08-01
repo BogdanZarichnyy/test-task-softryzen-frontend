@@ -1,9 +1,9 @@
 import { Button } from '../../components/button/Button';
-import images from '../../services/images';
+import images from '../../assets/images/gallery';
 
 import scss from './About.module.scss';
 
-export const About = () => {
+const About = () => {
     return (
         <section className={scss.about} id="about">
             <div className='container'>
@@ -11,9 +11,9 @@ export const About = () => {
 
                     <div className={scss.imageBox}>
                         <picture>
-                            <source srcSet={`${images.peopleWEBP_1x} 1x, ${images.peopleWEBP_2x} 2x`} type="image/webp" />
-                            <source srcSet={`${images.peopleJPG_1x} 1x, ${images.peopleJPG_2x} 2x`} type="image/jpg" />
-                            <img className={scss.image} src={`${images.peopleJPG_1x} 1x`} srcSet={`${images.peopleJPG_2x} 2x`} alt="People" title="People" width="320"/>
+                            <source srcSet={`${images.aboutWEBP_1x} 1x, ${images.aboutWEBP_2x} 2x`} type="image/webp" />
+                            <source srcSet={`${images.aboutJPG_1x} 1x, ${images.aboutJPG_2x} 2x`} type="image/jpg" />
+                            <img className={scss.image} src={`${images.aboutJPG_1x} 1x`} srcSet={`${images.aboutJPG_2x} 2x`} alt="People" title="People" width="320"/>
                         </picture>
                     </div>
 
@@ -38,3 +38,5 @@ export const About = () => {
         </section>
     );
 }
+
+export default About;

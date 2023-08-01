@@ -20,11 +20,11 @@
     }
 }
 
-.scroll {
-    position: fixed;
-    background-color: getColor('backdrop-color');
-    z-index: 10;
-}
+// .scroll {
+    // position: fixed;
+    // background-color: getColor('backdrop-color');
+    // z-index: 10;
+// }
 
 .wrraper {
     @media screen and (min-width: $tablet) {

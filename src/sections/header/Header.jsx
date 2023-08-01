@@ -9,7 +9,7 @@ const MOBILE_RESOLUTION_POINT = 320; // 320px
 const TABLET_RESOLUTION_POINT = 768; // 768px
 const DESKTOP_RESOLUTION_POINT = 1360; // 1360px
 
-export const Header = () => {
+const Header = () => {
     const [dimensions, setDimensions] = useState({ 
         // height: window.innerHeight,
         width: window.innerWidth
@@ -31,9 +31,15 @@ export const Header = () => {
         const scrollTopWindow = event.target.documentElement.scrollTop;
 
         if(scrollTopWindow >= scrollHeader) {
-            headerElement.classList.add(scss.scroll);
+            // headerElement.classList.add(scss.scroll);
+            headerElement.style.position = 'fixed';
+            headerElement.style.backgroundColor = '#04040480';
+            headerElement.style.zIndex = 10;
         } else {
-            headerElement.classList.remove(scss.scroll);
+            // headerElement.classList.remove(scss.scroll);
+            headerElement.style.position = 'absolute';
+            headerElement.style.backgroundColor = 'transparent';
+            headerElement.style.zIndex = 1;
         }
         
         // console.log('scrollTop', scrollTopWindow);
@@ -134,3 +140,5 @@ export const Header = () => {
         </header>
     );
 }
+
+export default Header;

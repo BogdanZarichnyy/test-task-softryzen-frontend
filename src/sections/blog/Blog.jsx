@@ -1,9 +1,9 @@
 import { Button } from '../../components/button/Button';
-import images from '../../services/images';
+import images from '../../assets/images/gallery';
 
 import scss from './Blog.module.scss';
 
-export const Blog = () => {
+const Blog = () => {
     return (
         <section className={scss.blog} id="blog">
             <div className='container'>
@@ -37,3 +37,5 @@ export const Blog = () => {
         </section>
     );
 }
+
+export default Blog;

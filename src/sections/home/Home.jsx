@@ -3,7 +3,7 @@ import { Button } from '../../components/button/Button';
 import sprite from '../../images/sprite.svg';
 import scss from './Home.module.scss';
 
-export const Home = () => {
+const Home = () => {
     return (
         <section className={scss.home} id="home">
             <div className='container'>
@@ -24,3 +24,5 @@ export const Home = () => {
         </section>
     );
 }
+
+export default Home;

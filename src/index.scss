@@ -58,4 +58,10 @@ body {
     background-color: getColor('main');
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    &::-webkit-scrollbar {
+        @media screen and (min-width: 320px) {
+            display: none;
+        }
+    }
 }

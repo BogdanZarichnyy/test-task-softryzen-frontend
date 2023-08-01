@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '../../components/button/Button';
 import { Modal } from '../../components/modal/Modal';
 import { useForm } from "react-hook-form";
 
-import images from '../../services/images';
+import images from '../../assets/images/gallery';
 import sprite from '../../images/sprite.svg';
 
 import scss from './Contact.module.scss';
 
-export const Contact = () => {
+const Contact = () => {
     // const [state, setState] = useState({ name: "", email: "" });
     const [showModal, setShowModal] = useState(false);
     const { register, handleSubmit, formState: { errors }, reset } = useForm({  });
@@ -16,11 +16,6 @@ export const Contact = () => {
     // const EMAIL_PATTERN = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
     const EMAIL_PATTERN = /^([a-zA-Z0-9._]{1}[a-zA-Z0-9._-]+)+@[a-zA-Z0-9._-]+\.([a-zA-Z0-9._-]*[a-zA-Z0-9._]+)$/;
     // const EMAIL_REGEXP = new RegExp(EMAIL_PATTERN, 'i');
-
-    useEffect(() => {
-        document.querySelector('#invalid');
-        document.querySelector('#header');
-    }, []);
 
     const invalidEmail = () => {
         const invalidEmailElement = document.querySelector('#invalid');
@@ -40,7 +35,7 @@ export const Contact = () => {
         return;
     }
 
-    errors.email?.message === "Not a valid E-mail address" && console.log(errors);
+    // errors.email?.message === "Not a valid E-mail address" && console.log(errors);
     errors.email?.message === "Not a valid E-mail address" ? invalidEmail() : validEmail();
 
     const encode = (data) => {
@@ -84,13 +79,15 @@ export const Contact = () => {
     // }
 
     const handleSubmitForm = async (data) => {
-        const warningEmailElement = document.querySelector('#warning');
-        // console.log(warningEmailElement);
+        const bodyElement = document.querySelector('body');
+        // console.log(bodyElement);
         const headerElement = document.querySelector('#header');
         // console.log(headerElement);
+        const warningEmailElement = document.querySelector('#warning');
+        // console.log(warningEmailElement);
 
         if (!data.email) {
-            console.log('E-mail is required');
+            // console.log('E-mail is required');
             warningEmailElement.style.opacity = 1;
             return;
         } else {
@@ -102,14 +99,16 @@ export const Contact = () => {
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: encode({ "form-name": "contact", ...data })
                 })
-                .then(() => console.log("Success!"))
+                // .then(() => console.log("Success!"))
                 .catch(error => alert(error));
 
-            console.log('Name:', data.name);
-            console.log('E-mail:', data.email);
+            // console.log('Name:', data.name);
+            // console.log('E-mail:', data.email);
             
             headerElement.style.position = 'absolute';
             headerElement.style.backgroundColor = 'transparent';
+
+            bodyElement.style.overflow = 'hidden';
             
             reset();
             setShowModal(true);
@@ -128,8 +127,32 @@ export const Contact = () => {
     }
 
     const handleCloseModal = () => {
+        const bodyElement = document.querySelector('body');
+        // console.log(bodyElement);
+        const headerElement = document.querySelector('#header');
+        // console.log(headerElement);
+
+        headerElement.style.position = 'fixed';
+        headerElement.style.backgroundColor = '#04040480';
+
+        bodyElement.style.overflow = 'auto';
+
         setShowModal(false);
     };
+
+    const handleCloseModalBackdrop = ({ currentTarget, target }) => {
+        if (currentTarget === target) {
+            // setShowModal(false);
+            handleCloseModal();
+        }
+    }
+
+    const handleCloseModalKeyDown = ({ code }) => {
+        if (code === 'Escape') {
+            // setShowModal(false);
+            handleCloseModal();
+        }
+    }
 
     return (
         <section className={scss.contact} id="contact">
@@ -209,10 +232,15 @@ export const Contact = () => {
 
                     </div>
 
-                    {showModal && <Modal onCloseModal={handleCloseModal}/>}
+                    {showModal && <Modal 
+                        onCloseModal={handleCloseModal} 
+                        handleCloseModalBackdrop={handleCloseModalBackdrop} 
+                        handleCloseModalKeyDown={handleCloseModalKeyDown} />}
 
                 </div>
             </div>
         </section>
     );
 }
+
+export default Contact;

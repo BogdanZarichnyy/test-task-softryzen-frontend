@@ -2,7 +2,7 @@ import { Social } from '../../components/social/Social';
 
 import scss from './Footer.module.scss';
 
-export const Footer = () => {
+const Footer = () => {
     return (
         <footer className={scss.footer} id="footer">
             <div className='container'>
@@ -19,3 +19,5 @@ export const Footer = () => {
         </footer>
     );
 }
+
+export default Footer;

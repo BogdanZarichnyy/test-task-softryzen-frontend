@@ -1,0 +1,152 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/functions';
+@import '../../sass/utils/mixins';
+
+.backdropModal{
+    position: fixed;
+    width: 100vw;
+    padding: 24px;
+    
+    // & .modal{
+        // transform: scale(1);
+    // }
+}
+
+.modal {
+    position: relative;
+    // transform: scale(0);
+    width: 100%;
+    border: 3px solid getColor('main');
+    border-radius: 3px;
+    background-color: getColor('main');
+    color: getColor('secondary');
+    font-family: 'OpenSans-Regular';
+    font-weight: 600;
+    @include transition-effect(transform);
+
+    @media screen and (min-width: $tablet) {
+        width: 646px;
+    }
+
+    @media screen and (max-height: 490px) and (min-width: $tablet) {
+        height: calc(100vh - 24px * 2 - 3px * 2 - 27px);
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 900px;
+        height: 603px;
+    }
+}
+
+.loading {
+    width: 100%;
+    height: 100%;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-height: $mobile) and (min-width: $mobile) and (max-height: 480px) {
+        height: calc(100vh - 24px * 2 - 3px * 4 - 27px);
+    }
+
+    @media screen and (min-width: $tablet) {
+        width: 646px;
+        height: 427px;
+    }
+
+    @media screen and (max-height: 490px) and (min-width: $tablet) {
+        height: calc(100vh - 24px * 2 - 3px * 2 - 27px);
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 900px;
+        height: 603px;
+    }
+}
+
+.loadingImage {
+    width: 32px;
+    height: 32px;
+}
+
+.list {
+    display: flex;
+}
+
+.item {
+    display: block;
+}
+
+.image {
+    object-fit: contain;
+
+    @media screen and (min-height: $mobile) and (min-width: $mobile) and (max-height: 480px) {
+        height: calc(100vh - 24px * 2 - 3px * 4 - 27px);
+        object-fit: cover;
+    }
+
+    @media screen and (min-width: $tablet) {
+        object-fit: cover;
+    }
+}
+
+.button {
+    position: absolute;
+    right: 0;
+    bottom: -35px;
+    display: flex;
+    // align-items: center;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    color: getColor('general');
+    cursor: pointer;
+    opacity: 0.5;
+    @include transition-effect(opacity);
+    outline: transparent;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.buttonImage {
+    width: 100%;
+    height: 100%;
+}
+
+.buttonArrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    padding: 0;
+    width: 40%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+    opacity: 0;
+    @include transition-effect(opacity);
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:disabled {
+        display: none;
+    }
+}
+
+.buttonArrow:nth-child(2)  {
+    left: 0;
+}
+
+.buttonArrowImage {
+    width: 50px;
+    height: 45px;
+
+    .buttonArrow:nth-child(3) & {
+        margin-left: auto;
+    }
+}
