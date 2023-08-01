@@ -27,7 +27,7 @@ const Team = () => {
                                             <source srcSet={`${item.imageJPG_1x} 1x, ${item.imageJPG_2x} 2x`} type="image/jpg" />
                                             <img src={`${item.imageJPG_1x} 1x`} srcSet={`${item.imageJPG_2x} 2x`} alt={item.name} title={item.name} width="280"/>
                                         </picture>
-                                        <Backdrop styles={scss.backdropTeam}>
+                                        <Backdrop>
                                             <Social/>
                                         </Backdrop>
                                     </div>
