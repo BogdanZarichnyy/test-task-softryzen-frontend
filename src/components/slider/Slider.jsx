@@ -91,7 +91,7 @@ export const Slider = ({ onCloseModal, handleCloseModalBackdrop, handleCloseModa
 
     return ReactDOM.createPortal(
         <Backdrop styles={scss.backdropModal} handleCloseModalBackdrop={handleCloseModalBackdrop} handleCloseModalKeyDown={handleCloseModalKeyDown}>
-            <div className={scss.modal} id="modal">
+            <div className={scss.modal}>
 
                 {/* <Swiper className={scss.list}
                         modules={[EffectFade, Navigation, Mousewheel, A11y]}

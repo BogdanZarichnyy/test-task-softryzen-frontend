@@ -2,14 +2,10 @@
 @import '../../sass/utils/functions';
 @import '../../sass/utils/mixins';
 
-.backdropModal{
+.backdropSlider{
     position: fixed;
     width: 100vw;
     padding: 24px;
-    
-    // & .modal{
-        // transform: scale(1);
-    // }
 }
 
 .modal {
