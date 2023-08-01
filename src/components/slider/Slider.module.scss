@@ -3,9 +3,9 @@
 @import '../../sass/utils/mixins';
 
 .backdropModal{
-    position: fixed !important;
-    width: 100vw !important;
-    padding: 24px !important;
+    position: fixed;
+    width: 100vw;
+    padding: 24px;
     
     // & .modal{
         // transform: scale(1);

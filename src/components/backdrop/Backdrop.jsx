@@ -14,7 +14,7 @@ export const Backdrop = ({ styles, children, handleCloseModalBackdrop, handleClo
     }, [handleCloseModalKeyDown]);
 
     return (
-        <div className={[scss.backdrop, styles].join(" ")} onClick={handleCloseModalBackdrop}>
+        <div className={[styles, scss.backdrop].join(" ")} onClick={handleCloseModalBackdrop}>
             {children}
         </div>
     );
